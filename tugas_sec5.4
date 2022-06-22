@@ -1,0 +1,20 @@
+/// <reference types="cypress" />
+describe('halaman login', () => {
+    it('login with uncorrect username & password', () => {
+        cy.visit('http://zero.webappsecurity.com/login.html')
+        cy.get('[id=user_login]').clear()
+        cy.get('[id=user_login]').type('fajar')
+        cy.get('[id=user_password]').clear()
+        cy.get('[id=user_password]').type('semangat')
+        cy.get('[type="checkbox"]').check()
+        cy.get('[type="submit"]').click()
+       //cy.get('input[name="submit"]').click
+       cy.get('.alert-error').should('contain.text','Login and/or password are wrong.')
+
+    }
+    )
+    
+   
+
+
+})
