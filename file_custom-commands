@@ -1,0 +1,12 @@
+Cypress.Commands.add('login', (username, password) => {
+    cy.clearCookies()
+    cy.clearLocalStorage()
+     
+    cy.get('[id=user_login]').clear()
+    cy.get('[id=user_login]').type('username')
+    cy.get('[id=user_password]').clear()
+    cy.get('[id=user_password]').type('password')
+    //cy.get('[type="checkbox"]').check()
+    cy.get('[type="submit"]').click()
+    
+})
